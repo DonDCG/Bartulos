@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "465153223672",
+    "firebase_url": "https://bartulos-a9c22.firebaseio.com",
+    "project_id": "bartulos-a9c22",
+    "storage_bucket": "bartulos-a9c22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465153223672:android:d6c3330340b1cd64",
+        "android_client_info": {
+          "package_name": "com.example.zerantus.bartulos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465153223672-0si5o9ejvo9qqqdt8gqks7l0hhb8m40g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zerantus.bartulos",
+            "certificate_hash": "847ffd40320a0f3776b18cc4d2efbb3ab90bee8c"
+          }
+        },
+        {
+          "client_id": "465153223672-8tjsls90t6ndusv4vl9rnvdci4u1gdm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaXylol6MpYJPDUHQDOC5naJK-fErT8cA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465153223672-8tjsls90t6ndusv4vl9rnvdci4u1gdm6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

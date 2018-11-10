@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1022907882200",
+    "firebase_url": "https://bartulo-1bd09.firebaseio.com",
+    "project_id": "bartulo-1bd09",
+    "storage_bucket": "bartulo-1bd09.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022907882200:android:3e0dc70912a5df1c",
+        "android_client_info": {
+          "package_name": "com.example.zerantus.bartulo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022907882200-inosk5nc15634or6lrv9dkgbc3rupi5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzx5Q8Ie8ZSxwNHvTdPfIQM--7b9CfZCo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

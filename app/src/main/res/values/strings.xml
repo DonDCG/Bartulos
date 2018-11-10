@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Bartulos</string>
+
+    <!-- Colores-->
+    <color name="background">#F3E2A9</color>
+    <color name="splash">#FF8000</color>
+
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+</resources>
