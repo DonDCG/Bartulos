@@ -1,6 +1,8 @@
 package com.example.zerantus.bartulos;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,29 +48,26 @@ public class Localizaciones extends AppCompatActivity {
 
         ejemplo = (TextView) findViewById(R.id.ejemplo);
 
-        eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                Localizacion_BaseDatos pred = dataSnapshot.getValue(Localizacion_BaseDatos.class);
-                ejemplo.setText(pred.getNombre());
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error!", databaseError.toException());
-            }
-        };
         mBBDD.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                Drawable back;
                 //Obtenemos cada uno de los hijos y cargamos sus datos en botón
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()){
                     Localizacion_BaseDatos post = postSnapshot.getValue(Localizacion_BaseDatos.class);
-                    ejemplo.setText(post.getNombre());
+                    ejemplo.setText("A cambiar");
                     Button boton = new Button(getApplicationContext());
                     boton.setText(post.getNombre());
-                    boton.setBackgroundColor(Color.GREEN);
+                    boton.setTextColor(Color.WHITE);
+                    boton.setTypeface(null,Typeface.BOLD);
+                    //Diferenciamos el estilo del botón por tipo de entorno
+                    if(post.tipo.equals("Natural")){
+                        back = getResources().getDrawable(R.drawable.localizaciones_boton_natural);
+                    }else{
+                        back = getResources().getDrawable(R.drawable.localizaciones_boton_normal);
+                    }
+                    boton.setBackground(back);
+                    boton.setWidth(90);
 
                     boton.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -78,8 +77,11 @@ public class Localizaciones extends AppCompatActivity {
                     });
                     //Va agregegando botones al contenedor.
                     botonesLayout.addView(boton);
-                    /*Localizacion_BaseDatos post = postSnapshot.getValue(Localizacion_BaseDatos.class);
-                    ejemplo.setText(post.getNombre());*/
+                    //Añadimos el margen del botón
+                    LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) boton.getLayoutParams();
+                    //boton.setLayoutParams(new LinearLayout.LayoutParams(10, 100));//TODO: Aumentar heigth de los botones
+                    lp.setMargins(25,10,25,15);
+                    boton.setLayoutParams(lp);
                 }
             }
 
