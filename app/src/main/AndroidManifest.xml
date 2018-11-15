@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +23,8 @@
         <activity android:name=".Restaurantes" />
         <activity android:name=".Alojamientos" />
         <activity android:name=".Localizaciones" />
-        <activity android:name=".Eventos"></activity>
+        <activity android:name=".Eventos" />
+        <activity android:name=".Guia"></activity>
     </application>
 
 </manifest>
