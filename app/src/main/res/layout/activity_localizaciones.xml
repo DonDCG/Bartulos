@@ -25,6 +25,7 @@
         android:layout_height="53dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:fontFamily="cursive"
         android:text="Localizaciones"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"

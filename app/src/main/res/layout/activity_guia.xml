@@ -4,79 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Guia">
+    tools:context=".Guia"
+    tools:layout_editor_absoluteY="25dp">
 
     <TextView
         android:id="@+id/mGuiaTitulo"
         android:layout_width="0dp"
-        android:layout_height="55dp"
+        android:layout_height="53dp"
         android:layout_marginStart="11dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="11dp"
-        android:layout_marginBottom="9dp"
+        android:fontFamily="cursive"
         android:text="Título Localización"
         android:textAlignment="center"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/mBotonera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/mBotonera"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="14dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mGuiaTitulo">
 
         <Button
             android:id="@+id/mBtnRev"
+            android:background="@drawable/inicio_boton_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="<<" />
+            android:drawableLeft="@drawable/icon_retroceder"
+            android:paddingLeft="30dp" />
 
         <Button
             android:id="@+id/mBtnPlay"
+            android:background="@drawable/inicio_boton_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Play" />
+            android:drawableLeft="@drawable/icon_play"
+            android:paddingLeft="30dp"
+            android:layout_weight="1" />
 
         <Button
             android:id="@+id/mBtnStop"
+            android:background="@drawable/inicio_boton_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Stop" />
+            android:drawableLeft="@drawable/icon_stop"
+            android:paddingLeft="30dp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/mBtnFf"
+            android:background="@drawable/inicio_boton_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_avanzar"
             android:layout_weight="1"
-            android:text=">>" />
+            android:paddingLeft="30dp"/>
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="426dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/mBotonera">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,6 +101,7 @@
                 android:id="@+id/mTextImgDes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:text="TextView" />
 
             <ImageView
@@ -105,6 +114,7 @@
                 android:id="@+id/mTextImg2Des"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:text="TextView" />
 
             <TextView
@@ -119,7 +129,15 @@
                 android:id="@+id/mTextDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_marginBottom="20dp"
+                android:text="@string/descripcion" />
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/mMap"
+                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
         </LinearLayout>
     </ScrollView>
 

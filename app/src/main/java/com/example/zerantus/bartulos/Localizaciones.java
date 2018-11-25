@@ -1,5 +1,6 @@
 package com.example.zerantus.bartulos;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -24,7 +25,6 @@ public class Localizaciones extends AppCompatActivity {
     private static final String TAG = "Localiaciones" ;
     private DatabaseReference mBBDD;
     private TextView ejemplo;
-    private ValueEventListener eventListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class Localizaciones extends AppCompatActivity {
                 Drawable back;
                 //Obtenemos cada uno de los hijos y cargamos sus datos en botón
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()){
-                    Localizacion_BaseDatos post = postSnapshot.getValue(Localizacion_BaseDatos.class);
+                    final Localizacion_BaseDatos post = postSnapshot.getValue(Localizacion_BaseDatos.class);
                     Button boton = new Button(getApplicationContext());
                     boton.setText(post.getNombre());
                     boton.setTextColor(Color.WHITE);
@@ -60,7 +60,16 @@ public class Localizaciones extends AppCompatActivity {
                     boton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Toast.makeText(getApplicationContext(), ejemplo, Toast.LENGTH_SHORT).show();
+                            Intent guia = new Intent(v.getContext(),Guia.class);
+                            guia.putExtra("img",post.getImg1());
+                            guia.putExtra("img2",post.getImg2());
+                            guia.putExtra("img1desc",post.getImg1desc());
+                            guia.putExtra("img2desc",post.getImg2desc());
+                            guia.putExtra("titulo",post.getNombre());
+                            guia.putExtra("lat",post.getLatitud());
+                            guia.putExtra("lang",post.getAltitud());
+                            guia.putExtra("audio",post.getAudio());
+                            startActivity(guia);
                         }
                     });
                     //Va agregegando botones al contenedor.
