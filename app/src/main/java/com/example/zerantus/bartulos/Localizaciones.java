@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Localizaciones extends AppCompatActivity {
 
     private LinearLayout botonesLayout;
-    private static final String TAG = "Localiaciones" ;
+    private static final String TAG = ""+R.string.localizacionesTAG ;
     private DatabaseReference mBBDD;
     private TextView ejemplo;
     @Override
@@ -77,7 +77,6 @@ public class Localizaciones extends AppCompatActivity {
                     botonesLayout.addView(boton);
                     //Añadimos el margen del botón
                     LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) boton.getLayoutParams();
-                    //boton.setLayoutParams(new LinearLayout.LayoutParams(10, 100));//TODO: Aumentar heigth de los botones
                     lp.setMargins(25,10,25,15);
                     boton.setLayoutParams(lp);
                 }

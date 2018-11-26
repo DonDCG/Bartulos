@@ -121,7 +121,7 @@
                 android:id="@+id/mDescTitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="INFORMACIÓN"
+                android:text="@string/informacion"
                 android:textColor="@android:color/background_dark"
                 android:textStyle="bold" />
 

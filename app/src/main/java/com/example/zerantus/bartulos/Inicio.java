@@ -24,7 +24,7 @@ import java.util.ListIterator;
 
 public class Inicio extends AppCompatActivity {
 
-    private static final String TAG = "Inicio" ;
+    private static final String TAG = ""+R.string.inicioTAG ;
     private ArrayList<Button> botonesIni;
     private Button mBtnLoc,mBtnRes,mBtnAloj,mBtnEvent,mBtnSalir;
     private TextView label;
@@ -58,7 +58,7 @@ public class Inicio extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error!", databaseError.toException());
+                Log.e(TAG, ""+R.string.error, databaseError.toException());
             }
         });
 
@@ -82,7 +82,7 @@ public class Inicio extends AppCompatActivity {
                             break;
                         case 5:
                             break;
-                        default: Toast.makeText(Inicio.this, "Error", Toast.LENGTH_SHORT).show();//TODO: Crear literal en strings
+                        default: Toast.makeText(Inicio.this, ""+R.string.error, Toast.LENGTH_SHORT).show();
                             break;
                     }
                 }

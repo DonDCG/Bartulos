@@ -1,9 +1,25 @@
 <resources>
     <string name="app_name">Bartulos</string>
 
+    <!--TAGS-->
+    <string name="mainTAG">Main</string>
+    <string name="inicioTAG">Inicio</string>
+    <string name="localizacionesTAG">Localizaciones</string>
+    <string name="alojamientosTAG">Alojamientos</string>
+    <string name="restaurantesTAG">Restaurantes</string>
+    <string name="eventosTAG">Eventos</string>
 
     <!--Literales-->
     <string name="sesionCaducada">Sesión caducada</string>
+    <string name="errorContraseña">Las contraseñas no coinciden</string>
+    <string name="errorRegistro">No se ha realizado el registro</string>
+    <string name="error">Error</string>
+    <string name="llamar">LLAMAR</string>
+    <string name="informacion">INFORMACIÓN</string>
+    <string name="tituloEventos">LISTADO DE EVENTOS</string>
+    <string name="tituloLocalizaciones">Localizaciones</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="alojamientos">Alojamientos</string>
     <!-- Colores-->
     <color name="background">#F3E2A9</color>
     <color name="splash">#FF8000</color>

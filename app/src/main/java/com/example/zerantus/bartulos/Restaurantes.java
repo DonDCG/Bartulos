@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Restaurantes extends AppCompatActivity {
 
     private LinearLayout botonesLayout;
-    private static final String TAG = "Restaurantes" ;
+    private static final String TAG = ""+R.string.restaurantesTAG ;
     private DatabaseReference mBBDD;
 
     @Override
@@ -65,7 +65,6 @@ public class Restaurantes extends AppCompatActivity {
                     botonesLayout.addView(boton);
                     //Añadimos el margen del botón
                     LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) boton.getLayoutParams();
-                    //boton.setLayoutParams(new LinearLayout.LayoutParams(10, 100));//TODO: Aumentar heigth de los botones
                     lp.setMargins(25,10,25,15);
                     boton.setLayoutParams(lp);
                 }
@@ -73,7 +72,7 @@ public class Restaurantes extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error!", databaseError.toException());
+                Log.e(TAG, ""+R.string.error, databaseError.toException());
             }
         });
     }

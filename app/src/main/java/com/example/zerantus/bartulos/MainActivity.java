@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "Main";//TODO: Crear literal en strings
+    private static final String TAG = ""+R.string.mainTAG;
     private FirebaseAuth mAuth;
     private EditText mEmailField,mPasswordField, mConfirmField;
     private Button mBtnSignIn, mBtnRegist;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Toast.makeText(MainActivity.this, R.string.sesionCaducada, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, ""+R.string.sesionCaducada, Toast.LENGTH_SHORT).show();
                 }
                 // ...
             }
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!Resgistrar()){
-                    Toast.makeText(MainActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();//TODO: Crear literal en strings
+                    Toast.makeText(MainActivity.this, ""+R.string.errorContraseña, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -86,8 +86,7 @@ public class MainActivity extends AppCompatActivity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(MainActivity.this, "No se ha realizado el registro",//TODO: Crear literal en strings
-                                            Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(MainActivity.this, ""+R.string.errorRegistro,Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -122,8 +121,7 @@ public class MainActivity extends AppCompatActivity {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                            Toast.makeText(MainActivity.this, "Error",//TODO: Crear literal en strings
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, ""+R.string.error,Toast.LENGTH_SHORT).show();
                         }else{
                             startActivity(new Intent(MainActivity.this,Inicio.class));
                             finish();

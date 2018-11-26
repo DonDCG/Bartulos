@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Eventos extends AppCompatActivity {
-    private static final String TAG = "Eventos" ;
+    private static final String TAG = ""+R.string.eventosTAG ;
     LinearLayout eventos;
     private DatabaseReference mBBDD;
     @Override
@@ -54,7 +54,7 @@ public class Eventos extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error!", databaseError.toException());
+                Log.e(TAG, ""+R.string.error, databaseError.toException());
             }
         });
     }

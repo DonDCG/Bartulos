@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Alojamientos extends AppCompatActivity {
 
     private LinearLayout botonesLayout;
-    private static final String TAG = "Alojamientos" ;
+    private static final String TAG = ""+R.string.alojamientosTAG ;
     private DatabaseReference mBBDD;
 
     @Override
@@ -64,7 +64,6 @@ public class Alojamientos extends AppCompatActivity {
                     botonesLayout.addView(boton);
                     //Añadimos el margen del botón
                     LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) boton.getLayoutParams();
-                    //boton.setLayoutParams(new LinearLayout.LayoutParams(10, 100));//TODO: Aumentar heigth de los botones
                     lp.setMargins(25,10,25,15);
                     boton.setLayoutParams(lp);
                 }
@@ -72,7 +71,7 @@ public class Alojamientos extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, "Error!", databaseError.toException());
+                Log.e(TAG, ""+R.string.error, databaseError.toException());
             }
         });
     }
