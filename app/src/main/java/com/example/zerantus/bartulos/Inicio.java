@@ -26,7 +26,7 @@ public class Inicio extends AppCompatActivity {
 
     private static final String TAG = "Inicio" ;
     private ArrayList<Button> botonesIni;
-    private Button mBtnLoc,mBtnRes,mBtnAloj,mBtnEvent,mBtnAjus,mBtnSalir;
+    private Button mBtnLoc,mBtnRes,mBtnAloj,mBtnEvent,mBtnSalir;
     private TextView label;
     private DatabaseReference mBBDD;
 
@@ -39,13 +39,12 @@ public class Inicio extends AppCompatActivity {
         mBtnRes = findViewById(R.id.mBtnIni2);
         mBtnAloj = findViewById(R.id.mBtnIni3);
         mBtnEvent = findViewById(R.id.mBtnIni4);
-        mBtnAjus = findViewById(R.id.mBtnIni5);
         mBtnSalir = findViewById(R.id.mBtnIni6);
         label = (TextView) findViewById(R.id.mLocalidadLbl);
 
         botonesIni = new ArrayList<>();
         botonesIni.add(mBtnLoc);botonesIni.add(mBtnRes);botonesIni.add(mBtnAloj);
-        botonesIni.add(mBtnEvent);botonesIni.add(mBtnAjus);botonesIni.add(mBtnSalir);
+        botonesIni.add(mBtnEvent);botonesIni.add(mBtnSalir);
 
         mBBDD = FirebaseDatabase.getInstance().getReference().
                 child("localidades").child("loc01").child("nombre");
@@ -79,7 +78,7 @@ public class Inicio extends AppCompatActivity {
                             break;
                         case 3:startActivity(new Intent(Inicio.this,Eventos.class));
                             break;
-                        case 4:startActivity(new Intent(Inicio.this,Ajustes.class));
+                        case 4:finish();
                             break;
                         case 5:
                             break;

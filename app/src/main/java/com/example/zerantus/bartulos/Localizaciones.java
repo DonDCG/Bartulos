@@ -69,6 +69,7 @@ public class Localizaciones extends AppCompatActivity {
                             guia.putExtra("lat",post.getLatitud());
                             guia.putExtra("lang",post.getAltitud());
                             guia.putExtra("audio",post.getAudio());
+                            guia.putExtra("desc",post.getDescripcion());
                             startActivity(guia);
                         }
                     });

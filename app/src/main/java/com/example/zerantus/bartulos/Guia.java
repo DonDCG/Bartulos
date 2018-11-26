@@ -31,7 +31,7 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
     private StorageReference mStorage;
 
     private ImageView img1,img2;
-    private TextView img1desc,img2desc,titulo;
+    private TextView img1desc,img2desc,titulo,descripcion;
 
     private MediaPlayer mReproductor;
     private Button mBtnPlay,mBtnStop,mBtnAtras,mBtnAlante;
@@ -41,9 +41,6 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
     private String ruta;
     private MapFragment mMap;
     private GoogleMap gmap;
-
-
-    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +64,7 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
         titulo = (TextView) findViewById(R.id.mGuiaTitulo);
         img1desc = (TextView) findViewById(R.id.mTextImgDes);
         img2desc = (TextView) findViewById(R.id.mTextImg2Des);
+        descripcion = (TextView) findViewById(R.id.mTextDescripcionGuia);
 
         mMap = (MapFragment) getFragmentManager().findFragmentById(R.id.mMap);
         mMap.getMapAsync(this);
@@ -75,6 +73,7 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
         titulo.setText((String) getIntent().getExtras().get("titulo"));
         img1desc.setText((String) getIntent().getExtras().get("img1desc"));
         img2desc.setText((String) getIntent().getExtras().get("img2desc"));
+        descripcion.setText((String) getIntent().getExtras().get("desc"));
 
         //Cargamos la imagenes en sus ImageView
         ruta = (String) getIntent().getExtras().get("img");

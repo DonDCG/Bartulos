@@ -42,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    startActivity(new Intent(MainActivity.this,Inicio.class));
+                    //startActivity(new Intent(MainActivity.this,Inicio.class));
+                    //finish();//Esto no ira comentado en estado final, solo para muestra de loggin.
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Toast.makeText(MainActivity.this, "Sesion caducada", Toast.LENGTH_SHORT).show();//TODO: Crear literal en strings
+                    Toast.makeText(MainActivity.this, R.string.sesionCaducada, Toast.LENGTH_SHORT).show();
                 }
                 // ...
             }
@@ -123,6 +124,9 @@ public class MainActivity extends AppCompatActivity {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
                             Toast.makeText(MainActivity.this, "Error",//TODO: Crear literal en strings
                                     Toast.LENGTH_SHORT).show();
+                        }else{
+                            startActivity(new Intent(MainActivity.this,Inicio.class));
+                            finish();
                         }
                     }
                 });

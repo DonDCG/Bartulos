@@ -8,12 +8,13 @@ public class Localizacion_BaseDatos {
     String img1,img2;
     String img1desc,img2desc;
     String audio;
+    String descripcion;
 
     public Localizacion_BaseDatos() {
 
     }
 
-    public Localizacion_BaseDatos(String nombre, String tipo, String altitud, String latitud,String img, String img2,String img1desc, String img2desc,String audio) {
+    public Localizacion_BaseDatos(String nombre, String tipo, String altitud, String latitud,String img, String img2,String img1desc, String img2desc,String audio, String descripcion) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.altitud = altitud;
@@ -23,6 +24,7 @@ public class Localizacion_BaseDatos {
         this.img1desc = img1desc;
         this.img2desc = img2desc;
         this.audio = audio;
+        this.descripcion = descripcion;
     }
 
     public String getNombre() {
@@ -52,6 +54,8 @@ public class Localizacion_BaseDatos {
     public String getImg2desc() {return img2desc; }
 
     public String getAudio() {return audio; }
+
+    public String getDescripcion() {return descripcion; }
 
 
 }

@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zerantus.bartulos">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -19,7 +20,8 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCtBarGuGaJWK05jEUnapU2r6fFmOpUWnA"/>
+            android:value="AIzaSyCtBarGuGaJWK05jEUnapU2r6fFmOpUWnA" />
+
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
@@ -30,20 +32,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Inicio"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Ajustes"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Restaurantes"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Alojamientos"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Localizaciones"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Eventos"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Guia"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Inicio"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ajustes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Restaurantes"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Alojamientos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Localizaciones"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Eventos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Guia"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Restaurante" />
+        <activity android:name=".Alojamiento"></activity>
     </application>
 
 </manifest>
