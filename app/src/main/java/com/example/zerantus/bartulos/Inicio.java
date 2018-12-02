@@ -58,7 +58,7 @@ public class Inicio extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.e(TAG, ""+R.string.error, databaseError.toException());
+                Log.e(TAG, getResources().getString(R.string.error), databaseError.toException());
             }
         });
 
@@ -82,7 +82,7 @@ public class Inicio extends AppCompatActivity {
                             break;
                         case 5:
                             break;
-                        default: Toast.makeText(Inicio.this, ""+R.string.error, Toast.LENGTH_SHORT).show();
+                        default: Toast.makeText(Inicio.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
                             break;
                     }
                 }

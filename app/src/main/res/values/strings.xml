@@ -20,6 +20,8 @@
     <string name="tituloLocalizaciones">Localizaciones</string>
     <string name="restaurantes">Restaurantes</string>
     <string name="alojamientos">Alojamientos</string>
+    <string name="registro">¿No tienes cuenta? Pincha AQUÍ para registrate</string>
+    <string name="inicio">Pincha AQUI para iniciar Sesión</string>
     <!-- Colores-->
     <color name="background">#F3E2A9</color>
     <color name="splash">#FF8000</color>

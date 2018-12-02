@@ -1,9 +1,11 @@
 package com.example.zerantus.bartulos;
 
+import android.app.ProgressDialog;
 import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +31,7 @@ import java.io.IOException;
 public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
 
     private StorageReference mStorage;
+    private ProgressDialog progressDialog;
 
     private ImageView img1,img2;
     private TextView img1desc,img2desc,titulo,descripcion;
@@ -46,6 +49,9 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guia);
+
+        progressDialog= new ProgressDialog(this);
+        progressDialog.show();
 
         mReproductor = new MediaPlayer();
         mStorage = FirebaseStorage.getInstance().getReference();
@@ -125,6 +131,12 @@ public class Guia extends AppCompatActivity  implements OnMapReadyCallback{
                 mReproductor.seekTo(mReproductor.getCurrentPosition()+10000);
             }
         });
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                progressDialog.dismiss();
+            }
+        }, 3000);
     }
 
     private void CargarImagen(String ruta, ImageView imagen){
