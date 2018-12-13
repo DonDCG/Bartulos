@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 progressDialog.show();
                 if(!Resgistrar()){
                     Toast.makeText(MainActivity.this, getResources().getString(R.string.errorContraseña), Toast.LENGTH_SHORT).show();
+                }else{
+                    SignIn();
                 }
                 progressDialog.dismiss();
             }
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         String password = mPasswordField.getText().toString();
         String confirmPassword = mConfirmField.getText().toString();
         try{
-            if(password.equals(confirmPassword)){
+            if(password.equals(confirmPassword) && password.length()>5){
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                             @Override

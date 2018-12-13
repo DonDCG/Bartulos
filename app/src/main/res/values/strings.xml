@@ -11,7 +11,7 @@
 
     <!--Literales-->
     <string name="sesionCaducada">Sesión caducada</string>
-    <string name="errorContraseña">Las contraseñas no coinciden</string>
+    <string name="errorContraseña">Las contraseñas no coinciden. Longitud mínima de 6 caracteres.</string>
     <string name="errorRegistro">No se ha realizado el registro</string>
     <string name="error">Error</string>
     <string name="llamar">LLAMAR</string>
